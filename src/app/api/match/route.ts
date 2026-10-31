@@ -1,3 +1,10 @@
-// Backend career matching logic (Team 4)
+// POST /api/match
+// body: { skills: string[] }
+// 200: { matches: CareerMatch[] }
+// 400: { error: string }
 
-export {};
+import { handleMatchRequest } from "../../../lib/matching-handler";
+
+export async function POST(request: Request): Promise<Response> {
+  return handleMatchRequest(request);
+}

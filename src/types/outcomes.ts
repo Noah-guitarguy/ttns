@@ -12,6 +12,7 @@ export interface Career {
 
 export interface CareerMatch {
 	careerId: string;
+	careerTitle?: string;
 	score: number;
 	rationale?: string[];
 }
