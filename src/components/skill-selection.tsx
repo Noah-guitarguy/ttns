@@ -20,11 +20,13 @@ export function UserSkillSelection() {
   );
 // Function to toggle skill selection 
   const toggleSkill = (skill: string) => {
-    if (selectedSkills.includes(skill)) {
-      setSelectedSkills(selectedSkills.filter((s) => s !== skill));
-    } else {
-      setSelectedSkills([...selectedSkills, skill]);
-    }
+    setSelectedSkills((currentSkills) => {
+      if (currentSkills.includes(skill)) {
+        return currentSkills.filter((s) => s !== skill);
+      } else {
+        return [...currentSkills, skill];
+      }
+    });
   };
 
   const findMatches = async () => {

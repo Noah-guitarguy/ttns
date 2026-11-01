@@ -30,7 +30,7 @@ export function findCareerMatches(skills: string[]): CareerMatch[] {
       return {
         careerId: occupation.code,
         careerTitle: occupation.title,
-        score: Number((rationale.length / selectedSkills.size).toFixed(4)),
+        score: Number((rationale.length / occupation.skills.length).toFixed(4)),
         rationale,
       };
     })
